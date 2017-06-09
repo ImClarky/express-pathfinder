@@ -1,0 +1,24 @@
+{
+  "name": "express-pathfinder",
+  "version": "1.0.0",
+  "description": "A module for collecting all of the paths registered by the Express Router",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImClarky/express-pathfinder.git"
+  },
+  "author": "Sean Clark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ImClarky/express-pathfinder/issues"
+  },
+  "homepage": "https://github.com/ImClarky/express-pathfinder#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2"
+  }
+}
