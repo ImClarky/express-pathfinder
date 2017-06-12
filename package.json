@@ -11,7 +11,7 @@
     "url": "git+https://github.com/ImClarky/express-pathfinder.git"
   },
   "author": "Sean Clark",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ImClarky/express-pathfinder/issues"
   },
