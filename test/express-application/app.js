@@ -16,12 +16,4 @@ var admin = require('./routes/admin');
 
 app.use("/admin", admin);
 
-var server = http.createServer(app, function() {
-  console.log("server started");
-});
-
-console.log("test");
-
-server.listen(3000);
-
 module.exports = app;
