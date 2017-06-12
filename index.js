@@ -7,7 +7,7 @@ module.exports = function(routes, methods) {
   } else if (typeof methods == "string") {
     methods = methods.toUpperCase()
     if (_methods.indexOf(methods) === -1) {
-      console.log("")
+      throw new Error("The method you have provided: '" + methods + "' is not supported. Please use one of the following methods:\r\n\r\n" + _methods.join(", "))
       return
     }
   } else if (typeof methods == "object" && Array.isArray(methods)) {
@@ -25,12 +25,12 @@ module.exports = function(routes, methods) {
     if (errors.length > 0) {
       console.log("The following Methods that were provided are not supported and have been omitted: " + errors.join(", "))
       if (errors.length == initialCount) {
-        console.log("")
+        throw new Error("None of the provided methods are supported.")
         return
       }
     }
   } else {
-    // ERROR
+    throw new TypeError("The methods parameter must provide either a String, or an Array of Strings.")
     return
   }
 
