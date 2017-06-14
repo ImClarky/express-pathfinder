@@ -32,6 +32,10 @@ And then used `app._router.stack` and iterated over the results to get the metho
 
 ## Installation
 
+```
+npm install express-pathfinder
+```
+
 ## Usage
 Usage is quite simple for this module. Inside the the main application file (app.js for example) add the following:
 
