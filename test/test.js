@@ -6,7 +6,7 @@ var expect = require('chai').expect
 
 describe("Test Routes - SIMULATED ROUTES", function() {
   it("Should get all routes from the list", function() {
-    var routes = pathfinder(exampleRoutes);
+    var routes = pathfinder(exampleRoutes)
     assert.equal(routes.length, 6)
   })
 
