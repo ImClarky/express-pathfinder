@@ -1,6 +1,6 @@
 {
   "name": "express-pathfinder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module for collecting all of the paths registered by the Express Router",
   "main": "index.js",
   "scripts": {
