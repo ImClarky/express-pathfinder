@@ -1,8 +1,8 @@
-var exampleRoutes = require('./example-route-data');
+var exampleRoutes = require('./example-route-data')
 var expressApp = require('./express-application/app')
-var pathfinder = require('../');
-var assert = require('chai').assert;
-var expect = require('chai').expect;
+var pathfinder = require('../')
+var assert = require('chai').assert
+var expect = require('chai').expect
 
 describe("Test Routes - SIMULATED ROUTES", function() {
   it("Should get all routes from the list", function() {
@@ -20,28 +20,28 @@ describe("Test Routes - SIMULATED ROUTES", function() {
     var routes = pathfinder(exampleRoutes, "DELETE") // Delete is only used in a "mounted route"
     var regex = /^\/admin\/[a-zA-Z0-9]*/
 
-    var test = regex.test(routes[0].path);
+    var test = regex.test(routes[0].path)
 
-    assert.isTrue(test);
+    assert.isTrue(test)
   })
 
   it("should throw an Error as supplied HTTP method is not supported", function() {
     expect(() => {
       pathfinder(exampleRoutes, "FOOBAR")
-    }).to.throw(Error);
+    }).to.throw(Error)
   })
 
-  it("should throw an TypeError as supplied method paramter is not of the correct type", function() {
+  it("should throw an TypeError as supplied method parameter is not of the correct type", function() {
     expect(() => {
       pathfinder(exampleRoutes, 123456)
-    }).to.throw(TypeError);
+    }).to.throw(TypeError)
   })
 })
 
 
 describe("Test Routes - EXPRESS APPLICATION", function() {
   it("Should get all routes from the list", function() {
-    var routes = pathfinder(expressApp._router.stack);
+    var routes = pathfinder(expressApp._router.stack)
     assert.equal(routes.length, 6)
   })
 
@@ -55,20 +55,20 @@ describe("Test Routes - EXPRESS APPLICATION", function() {
     var routes = pathfinder(expressApp._router.stack, "DELETE") // Delete is only used in a "mounted route"
     var regex = /^\/admin\/[a-zA-Z0-9]*/
 
-    var test = regex.test(routes[0].path);
+    var test = regex.test(routes[0].path)
 
-    assert.isTrue(test);
+    assert.isTrue(test)
   })
 
   it("should throw an Error as supplied HTTP method is not supported", function() {
     expect(() => {
       pathfinder(expressApp._router.stack, "FOOBAR")
-    }).to.throw(Error);
+    }).to.throw(Error)
   })
 
-  it("should throw a TypeError as supplied method paramter is not of the correct type", function() {
+  it("should throw a TypeError as supplied method parameter is not of the correct type", function() {
     expect(() => {
       pathfinder(expressApp._router.stack, 123456)
-    }).to.throw(TypeError);
+    }).to.throw(TypeError)
   })
 })
